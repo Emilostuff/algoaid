@@ -9,7 +9,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="algoaid",
-    version="1.0.0",
+    version="1.0.1",
     description="Tools for learning about algorithms and data structures",
     long_description=long_description,
     long_description_content_type="text/markdown",
