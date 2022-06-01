@@ -29,9 +29,8 @@ if __name__ == '__main__':
     # display
     g.display("Before Union")
 
-    # union
-    g.find(g.get_node("6"))
-    g.display("After find(6) with path compression")
+    # Find with path compression (requires disjoint-set)
+    g.show_find("6")
 
-    g.union(g.get_node("9"), g.get_node("11"))
-    g.display("After union(0, 11)")
+    # Union (requires disjoint-set)
+    g.show_union("9", "11")

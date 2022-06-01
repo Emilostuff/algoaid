@@ -76,7 +76,8 @@ class Graph:
         if self.type == self.GraphType.DISJOINT_SET:
             for node in self.nodes.values():
                 if node.parent != node:
-                    dot.edge(node.parent.key, node.key)
+                    fillcolor = 'red' if node.visited else None
+                    dot.edge(node.parent.key, node.key, color=fillcolor)
         else:
             for edge in self.get_edges():
                 label = " " + str(edge.weight) + \
@@ -214,7 +215,10 @@ class Graph:
 
     def find(self, x):
         if x.parent != x:
+            old_parent = x.parent
             x.parent = self.find(x.parent)
+            if x.parent != old_parent:
+                x.visited = True
         return x.parent
 
     def union(self, x, y):
@@ -229,3 +233,11 @@ class Graph:
                 y.size += x.size
             return True
         return False
+
+    def show_find(self, x):
+        self.find(self.get_node(x))
+        self.display(f"Disjoint-set after find({x})")
+
+    def show_union(self, x, y):
+        self.union(self.get_node(x), self.get_node(y))
+        self.display(f"Disjoint-set after union({x}, {y})")

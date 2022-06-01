@@ -16,16 +16,15 @@ if __name__ == '__main__':
         5..10 8
         5..6 20
         10..11 5
-        6..11 8
-        6..7 4
-        6..3 1
-        3..7 1
-        7..11 3
-        2..3 14
-        2..5 3
     """
     # construct graph
     g = Graph(edges, type=Graph.GraphType.GRAPH)
 
-    # compute MST
+    # DFS
+    g.dfs_tree("0")
+
+    # BFS
+    g.bfs_tree("0")
+
+    # Compute MST, requires a weighted graph!
     g.mst_tree()
