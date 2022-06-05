@@ -2,6 +2,7 @@ name: Hello World
 on: [push]
 jobs:
   Test-Job:
+    runs-on: ubuntu-latest
     container: python:3.10.4-alpine
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
