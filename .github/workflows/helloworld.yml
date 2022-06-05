@@ -3,7 +3,9 @@ on: [push]
 jobs:
   Test-Job:
     runs-on: ubuntu-latest
-    container: python:3.10.4-alpine
+    container:
+      image: python:3.10.4-alpine
+      options: --user root
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
