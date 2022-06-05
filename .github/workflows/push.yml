@@ -1,0 +1,27 @@
+name: Code Quality Verification
+on: [push]
+jobs:
+  Linting:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.10.4-bullseye
+      options: --user root
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install -r requirements_dev.txt
+      - name: Run linting
+        run: python -m flake8 ./src
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.10.4-bullseye
+      options: --user root
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install -r requirements_dev.txt
+      - name: Run unit tests
+        run: python -m pytest --cov=src --cov-fail-under=80 tests
