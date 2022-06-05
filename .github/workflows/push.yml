@@ -25,10 +25,10 @@ jobs:
         run: pip install -r requirements_dev.txt
       - name: Run unit tests
         run: python -m pytest --cov=src --cov-fail-under=29 tests
-  Unit-Tests-3-7:
+  Unit-Tests-3-8:
     runs-on: ubuntu-latest
     container:
-      image: python:3.7-bullseye
+      image: python:3.8-bullseye
       options: --user root
     steps:
       - name: Check out repository code
