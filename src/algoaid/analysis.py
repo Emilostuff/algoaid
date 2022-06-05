@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 def __runtime(f, n):
-        start = time.perf_counter()
+    start = time.perf_counter()
     f(n)
     end = time.perf_counter()
     return end-start
