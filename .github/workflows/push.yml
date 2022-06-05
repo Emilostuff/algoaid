@@ -24,4 +24,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements_dev.txt
       - name: Run unit tests
-        run: python -m pytest --cov=src --cov-fail-under=80 tests
+        run: python -m pytest --cov=src --cov-fail-under=29 tests
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.7-bullseye
+      options: --user root
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install -r requirements_dev.txt
+      - name: Run unit tests
+        run: python -m pytest --cov=src --cov-fail-under=29 tests

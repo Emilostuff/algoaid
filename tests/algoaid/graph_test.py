@@ -21,7 +21,7 @@ def test_graph_nodes():
         assert node in dg.nodes
 
 
-def test_digraph_get_edges():
+def test_get_edges_digraph():
     # construct graph
     g = Graph(EDGES_WEIGHTS, type=Graph.GraphType.DI_GRAPH)
 
