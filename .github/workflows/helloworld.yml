@@ -4,7 +4,7 @@ jobs:
   Test-Job:
     runs-on: ubuntu-latest
     container:
-      image: python:3.10.4-alpine
+      image: python:3.10.4-bullseye
       options: --user root
     steps:
       - name: Check out repository code
