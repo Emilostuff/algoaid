@@ -9,7 +9,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="algoaid",
-    version="1.0.1",
+    version="1.0.2",
     description="Tools for learning about algorithms and data structures",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -26,6 +26,6 @@ setup(
     keywords="student, learning, algorithms, data, structures",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    python_requires=">=3.7, <4",
+    python_requires=">=3.8, <4",
     install_requires=["matplotlib", "graphviz", "scipy", "numpy"],
 )
