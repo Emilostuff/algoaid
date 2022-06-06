@@ -7,7 +7,7 @@ from .node import Node
 
 class Graph:
     class GraphType(Enum):
-            GRAPH = "an undirected graph"
+        GRAPH = "an undirected graph"
         DI_GRAPH = "a directed graph"
         DISJOINT_SET = "a disjoint Set"
 
