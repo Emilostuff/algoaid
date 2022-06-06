@@ -31,7 +31,6 @@ def test_get_edges_digraph():
     assert len(edges) == len(graph_edges)
 
     for (a, b, w) in edges:
-        # print(a, b, w)
         # print([f"{e.start.key}..{e.to.key} {e.weight}" for e in graph_edges])
         assert any(
             [e.start.key == str(a) and e.to.key == str(
