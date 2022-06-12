@@ -1,5 +1,5 @@
 name: Code Quality Verification
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   Linting:
     runs-on: ubuntu-latest
